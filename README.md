@@ -1,6 +1,7 @@
 ---
+permalink: /
 repo_url: https://github.com/Shinigami072/AUTO-ADR-TEST
-updated_at: 2023-07-04T17:54:27Z
+updated_at: 2023-07-04T19:56:15Z
 
 topics:
    - adr
@@ -17,9 +18,10 @@ A description of the repowitory
     - [remote](https://github.com/Shinigami072/AUTO-ADR-TEST/blob/master/adr/001-tewst.md)
 - **002** [test_2.md](adr/002-test_2.md)
     - [remote](https://github.com/Shinigami072/AUTO-ADR-TEST/blob/master/adr/002-test_2.md)
- ## Info
+
+## Info
 - Rendered At: [https://shinigami072.github.io/AUTO-ADR-TEST/](https://shinigami072.github.io/AUTO-ADR-TEST/)
-- Updated At: 2023-07-04T17:54:27Z
+- Updated At: 2023-07-04T19:56:15Z
 - License: [Creative Commons Zero v1.0 Universal]()
 
 - Topics:
