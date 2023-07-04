@@ -12,11 +12,11 @@ topics:
 # [Shinigami072/AUTO-ADR-TEST](https://github.com/Shinigami072/AUTO-ADR-TEST)
 
 A description of the repowitory
-- **000** [Test.md](adr/000-Test.md)
+- **000** [Test](adr/000-Test.md)
     - [remote](https://github.com/Shinigami072/AUTO-ADR-TEST/blob/master/adr/000-Test.md)
-- **001** [tewst.md](adr/001-tewst.md)
+- **001** [tewst](adr/001-tewst.md)
     - [remote](https://github.com/Shinigami072/AUTO-ADR-TEST/blob/master/adr/001-tewst.md)
-- **002** [test_2.md](adr/002-test_2.md)
+- **002** [test_2](adr/002-test_2.md)
     - [remote](https://github.com/Shinigami072/AUTO-ADR-TEST/blob/master/adr/002-test_2.md)
 
 ## Info
