@@ -28,11 +28,13 @@ jobs:
         ID: ${{github.event.issue.number}}
         TITLE: ${{github.event.issue.title}}
       run:
-        echo "id=$(printf '%03d' "$ID")" >> "$GITHUB_OUTPUT"
+        export FID=`printf '%03d' "$ID"`;
+
+        echo "id=$FID" >> "$GITHUB_OUTPUT"
 
         echo "title=$(echo "$TITLE" | sed -e 's/\s\+/_/g' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
         
-        echo "fiename=$(echo "adr/$TITLE.md" | sed -e 's/\s\+/_/g' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+        echo "fiename=$(echo "adr/$FID-$TITLE.md" | sed -e 's/\s\+/_/g' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
     - name: cleanup old
       env:
         F_Id: ${{steps.meta.outputs.id}}
