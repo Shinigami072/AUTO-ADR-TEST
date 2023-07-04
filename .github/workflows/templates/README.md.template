@@ -1,5 +1,5 @@
 ---
-repo_url: github.event.repository.html_url
+repo_url: {{github.event.repository.html_url}}
 updated_at: {{github.event.repository.updated_at}}
 {% if github.event.repository.topics %}
 topics: 
