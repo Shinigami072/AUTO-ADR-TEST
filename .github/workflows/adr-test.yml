@@ -56,7 +56,7 @@ jobs:
           for i in `find adr -maxdepth 1 -regextype posix-egrep -regex 'adr/[0-9]{3}-.+\.md'`; do
             echo $i
             echo $sep >>list.json
-            echo "{\"id\":\"${i:4:3}\",\"title\":\"${i:8}\",\"file\":\"$i\",\"remote_url\":\"$REMOTE_URL/$i\"}" >> list.json
+            echo "{\"id\":\"${i:4:3}\",\"title\":\"${i:8:-3}\",\"file\":\"$i\",\"remote_url\":\"$REMOTE_URL/$i\"}" >> list.json
             sep=','
           done;
           echo ']' >> list.json
