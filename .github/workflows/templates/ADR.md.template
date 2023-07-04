@@ -25,4 +25,4 @@ labels:
 
 ## Repository
 
-[{{github.event.issue.repository.name}}]({{github.event.repository.html_url}})
+[{{github.event.issue.repository.name}}]({{github.event.issue.repository.html_url}})
