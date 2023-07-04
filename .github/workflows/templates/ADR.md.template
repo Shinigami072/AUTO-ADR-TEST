@@ -22,7 +22,3 @@ labels:
 # **{{load_json("meta.json").id}}** - [{{github.event.issue.title}}]({{github.event.issue.html_url}})
 
 {{github.event.issue.body}}
-
-## Repository
-
-[{{github.event.issue.repository.name}}]({{github.event.issue.repository.html_url}})
