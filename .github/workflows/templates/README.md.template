@@ -1,0 +1,29 @@
+---
+repo_url: github.event.repository.html_url
+updated_at: {{github.event.repository.updated_at}}
+{% if github.event.repository.topics %}
+topics: 
+{%- for topic in github.event.repository.topics %}
+   - {{topic}}
+{%- endfor %}
+{% endif %}---
+<!-- README.md is auto-generated from README.md.template -->
+
+# [{{ github.repository }}]({{ github.event.repository.html_url }})
+
+{{ github.event.repository.description }}
+
+{%- for item in load_json("list.json")|sort(attribute="id") %}
+- **{{item.id}}** [{{item.title}}]({{item.file}})
+    - [remote]({{item.remote_url}})
+{%- endfor %}
+ ## Info
+- Rendered At: [{{github.event.repository.homepage}}]({{github.event.repository.homepage}})
+- Updated At: {{github.event.repository.updated_at}}
+- License: [{{github.event.repository.license.name}}]({{github.event.repository.license.html_url}})
+{% if github.event.repository.topics %}
+- Topics: 
+{%- for topic in github.event.repository.topics %}
+   - {{topic}}
+{%- endfor %}
+{% endif %}

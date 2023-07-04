@@ -1,0 +1,24 @@
+
+---
+updated_at: {{github.event.issue.updated_at}}
+state: {{github.event.issue.state}}
+state_reason: {{github.event.issue.state_reason}}
+{% if github.event.issue.assingees %}
+assingees:
+{% for assingee in  github.event.issue.assignees %}
+    - login: assingee.login
+      url: assingee.html_url
+{% endfor %}
+{% endif %}{% if github.event.issue.labels %}
+labels:
+{% for label in  github.event.issue.labels %}
+    - name: label.name
+      description: label.description
+{% endfor %}
+{% endif %}---
+
+<!-- {{load_json("meta.json").filename}} is auto-generated from ADR.md.template -->
+
+# **{{load_json("meta.json").id}}** - [{{github.event.issue.title}}]({{github.event.issue.html_url}})
+
+{{github.event.issue.body}}

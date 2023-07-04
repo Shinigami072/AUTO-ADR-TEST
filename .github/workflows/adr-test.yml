@@ -50,28 +50,22 @@ jobs:
         env: 
           REMOTE_URL: ${{fromJSON(steps.set-result.outputs.result).data.html_url}}/blob/master
         run: |
-          echo 'list<<EOF' >> $GITHUB_OUTPUT
-          for i in `find adr -maxdepth 1 -regextype posix-egrep -regex 'adr/[0-9]{3}-.+\.md' | sort` ; do
+          touch list.json
+          echo '[' >> list.json
+          sep=''
+          for i in `find adr -maxdepth 1 -regextype posix-egrep -regex 'adr/[0-9]{3}-.+\.md'`; do
             echo $i
-            echo "* [${i:4:3} ${i:8}]($i) [remote]($REMOTE_URL/$i)"  >> $GITHUB_OUTPUT
+            echo $sep >>list.json
+            echo "{\"id\":\"${i:4:3}\",\"title\":\"${i:8}\",\"file\":\"$i\",\"remote_url\":\"$REMOTE_URL/$i\"}" >> list.json
+            sep=','
           done;
-          echo 'EOF' >> $GITHUB_OUTPUT;
-      - name: Test README.md
-        env:
-          README_MD: |
-            # [${{fromJSON(steps.set-result.outputs.result).data.name}}](${{fromJSON(steps.set-result.outputs.result).data.html_url}})
-          
-            ${{fromJSON(steps.set-result.outputs.result).data.description}}
-            ## ADRs
-            
-            ${{steps.get-adr-list.outputs.list}}
-            
-            ## Info
-            - Rendered: ${{fromJSON(steps.set-result.outputs.result).data.homepage}}
-            - Updated At: ${{fromJSON(steps.set-result.outputs.result).data.updated_at}}
-            - Pushed At: ${{fromJSON(steps.set-result.outputs.result).data.pushed_at}}
-        run: |
-          echo "$README_MD" > README.md
+          echo ']' >> list.json
+          cat list.json
+      - name: Readme.md Templated
+        uses: release-engineers/action-template@v1
+        with:
+          source: '.github/workflows/templates/README.md.template'
+          target: 'README.md'
       - name: Commit Back
         run: |
            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
