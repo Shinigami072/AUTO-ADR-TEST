@@ -1,4 +1,5 @@
 ---
+permalink: /
 repo_url: {{github.event.repository.html_url}}
 updated_at: {{github.event.repository.updated_at}}
 {% if github.event.repository.topics %}
@@ -17,7 +18,8 @@ topics:
 - **{{item.id}}** [{{item.title}}]({{item.file}})
     - [remote]({{item.remote_url}})
 {%- endfor %}
- ## Info
+
+## Info
 - Rendered At: [{{github.event.repository.homepage}}]({{github.event.repository.homepage}})
 - Updated At: {{github.event.repository.updated_at}}
 - License: [{{github.event.repository.license.name}}]({{github.event.repository.license.html_url}})
