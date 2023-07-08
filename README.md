@@ -1,7 +1,7 @@
 ---
 permalink: /
 repo_url: https://github.com/Shinigami072/AUTO-ADR-TEST
-updated_at: 2023-07-04T20:38:34Z
+updated_at: 2023-07-07T19:42:35Z
 
 topics:
    - adr
@@ -21,7 +21,7 @@ A description of the repowitory
 
 ## Info
 - Rendered At: [https://shinigami072.github.io/AUTO-ADR-TEST/](https://shinigami072.github.io/AUTO-ADR-TEST/)
-- Updated At: 2023-07-04T20:38:34Z
+- Updated At: 2023-07-07T19:42:35Z
 - License: [Creative Commons Zero v1.0 Universal]()
 
 - Topics:
